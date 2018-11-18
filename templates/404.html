@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+    ooops 404
+{% endblock %}
+
+{% block nav %}
+      <ul class="rd-navbar-nav">
+        <li class="active"><a href="index.html">首页</a>
+        </li>
+        <li><a href="about-us.html">游戏汇总</a>
+        </li>
+        <li><a href="services.html">常见问题</a>
+        </li>
+        <li><a href="our-work.html">关于我们</a>
+        </li>
+      </ul>
+{% endblock %}
+
+{% block content %}
+      <section class="breadcrumbs-custom bg-image" style="background-image: url(/static/images/bg-image-1.jpg);">
+        <div class="shell">
+          <p class="heading-1 breadcrumbs-custom__title">404</p>
+        </div>
+      </section>
+
+      <section class="section section-sm bg-white text-center">
+        <div class="shell">
+          <div class="range range-sm-center">
+            <div class="cell-lg-7">
+              <h3>网页不见啦~~~<br class="veil reveal-md-block"></h3>
+              <p class="large"> (╯‵□′)╯︵┻━┻ </p>
+              <div class="group-sm group-sm_mod-1"> <a class="button button-darker" href="index.html">回到首页</a>
+                <p class="text-bold">or</p><a class="button button-primary" href="contacts.html">联系我们</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}
