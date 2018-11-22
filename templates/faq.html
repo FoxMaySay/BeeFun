@@ -1,13 +1,22 @@
 {% extends "base.html" %}
 
 {% block title %}
+    BeeFun区块链游戏汇总 -- 最全的区块链游戏资源合集
 {% endblock %}
 
 {% block description %}
+    BeeFun是一个DApp区块链游戏分发平台，推荐最全最新潮最好玩的ETH、EOS等区块链游戏。
 {% endblock %}
 
 {% block nav %}
+    <ul class="rd-navbar-nav">
+        <li><a href="{% url 'index' %}">首页</a></li>
+        <li><a href="{% url 'games' %}">游戏汇总</a></li>
+        <li class="active"><a href="{% url 'faq' %}">常见问题</a></li>
+        <li><a href="{% url 'contact-us' %}">联系我们</a></li>
+    </ul>
 {% endblock %}
 
 {% block content %}
+
 {% endblock %}

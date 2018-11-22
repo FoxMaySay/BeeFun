@@ -4,7 +4,7 @@
     <!-- Site Title-->
     <title>{% block title %}BeeFun -- 最全的区块链游戏资源合集{% endblock %}</title>
     <meta name="keywords" content="区块链,游戏,dapp,区块链游戏,数字货币,加密货币,ETH,以太坊,EOS,柚子,星云链,平台,分发,推荐,鉴赏,开发商"/>
-    <meta name="description" content="{% block description %}BeeFun是一个DApp区块链游戏分发平台，推荐最新潮最好玩的ETH、EOS等区块链游戏。{% endblock %}"/>
+    <meta name="description" content="{% block description %}BeeFun是一个DApp区块链游戏分发平台，推荐最全最新潮最好玩的ETH、EOS等区块链游戏。{% endblock %}"/>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,18 +61,14 @@
                 </div>
                 <!-- RD Navbar Nav -->
                 <div class="rd-navbar-nav-wrap">
-                  <div class="rd-navbar-main-item"><a class="button button-xs button-primary" href="contacts.html">提交游戏</a></div>
+                  <div class="rd-navbar-main-item"><a class="button button-xs button-primary" href="{% url 'submit' %}">提交游戏</a></div>
                   <!-- RD Navbar Nav-->
                     {% block nav %}
                   <ul class="rd-navbar-nav">
-                    <li class="active"><a href="index.html">首页</a>
-                    </li>
-                    <li><a href="about-us.html">游戏汇总</a>
-                    </li>
-                    <li><a href="services.html">常见问题</a>
-                    </li>
-                    <li><a href="our-work.html">关于我们</a>
-                    </li>
+                    <li class="active"><a href="{% url 'index' %}">首页</a></li>
+                    <li><a href="{% url 'games' %}">游戏汇总</a></li>
+                    <li><a href="{% url 'faq' %}">常见问题</a></li>
+                    <li><a href="{% url 'contact-us' %}">联系我们</a></li>
                   </ul>
                     {% endblock %}
                 </div>

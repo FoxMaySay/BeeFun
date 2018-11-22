@@ -1,13 +1,111 @@
 {% extends "base.html" %}
 
 {% block title %}
+    BeeFun区块链游戏汇总 -- 最全的区块链游戏资源合集
 {% endblock %}
 
 {% block description %}
+    BeeFun是一个DApp区块链游戏分发平台，推荐最全最新潮最好玩的ETH、EOS等区块链游戏。
 {% endblock %}
 
 {% block nav %}
+    <ul class="rd-navbar-nav">
+        <li><a href="{% url 'index' %}">首页</a></li>
+        <li class="active"><a href="{% url 'games' %}">游戏汇总</a></li>
+        <li><a href="{% url 'faq' %}">常见问题</a></li>
+        <li><a href="{% url 'contact-us' %}">联系我们</a></li>
+    </ul>
 {% endblock %}
 
 {% block content %}
+    <!-- Search results -->
+<section class="section section-md bg-white">
+    <div class="shell">
+      <!-- RD Search-->
+      <form class="rd-search rd-search_md rd-search_classic" action="search-results.html" method="GET">
+        <div class="form-wrap">
+          <input class="form-input" id="search-results-search" type="text" name="s" autocomplete="off">
+          <label class="form-label" for="search-results-search">Search...</label>
+        </div>
+        <button class="rd-search-submit" type="submit"></button>
+      </form>
+      <div class="rd-search-results"></div>
+    </div>
+</section>
+
+
+    <!-- All games -->
+<section class="section section-md bg-white">
+<div class="shell shell-wide">
+<div class="range range-md-center">
+<div class="cell-lg-11">
+  <!-- Section List -->
+  <div class="range range-center range-30 range-flex">
+    <div class="cell-sm-5 cell-lg-3">
+      <article class="post-modern"><a class="post-modern__image-wrap" href="single-post.html"><img class="post-modern__image" src="/static/images/post-1-365x215.jpg" alt="" width="365" height="215"/></a>
+        <div class="post-modern__main">
+          <p class="post-modern__title"><a href="single-post.html">How We Measure the Increasing Vlogs' Ad Potential</a></p>
+          <p class="post-modern__text">We have recently finished our research, which is closely connected</p>
+          <ul class="post-modern__meta">
+            <li><span class="icon icon-primary mdi mdi-clock"></span><a href="single-post.html">January 6, 2017</a></li>
+            <li><span class="icon icon-primary fl-justicons-visible6"></span><span>524</span></li>
+            <li> <span class="icon icon-primary mdi mdi-comment-outline"></span><a href="single-post.html">3</a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <div class="cell-sm-5 cell-lg-3">
+      <article class="post-modern"><a class="post-modern__image-wrap" href="single-post.html"><img class="post-modern__image" src="/static/images/post-2-365x215.jpg" alt="" width="365" height="215"/></a>
+        <div class="post-modern__main">
+          <p class="post-modern__title"><a href="single-post.html">Digital Marketing Metrics That Really Matter Nowadays</a></p>
+          <p class="post-modern__text">Marketing is currently in a state of evolution where it is dispensing</p>
+          <ul class="post-modern__meta">
+            <li><span class="icon icon-primary mdi mdi-clock"></span><a href="single-post.html">January 6, 2017</a></li>
+            <li><span class="icon icon-primary fl-justicons-visible6"></span><span>524</span></li>
+            <li> <span class="icon icon-primary mdi mdi-comment-outline"></span><a href="single-post.html">3</a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <div class="cell-sm-5 cell-lg-3">
+      <article class="post-modern"><a class="post-modern__image-wrap" href="single-post.html"><img class="post-modern__image" src="/static/images/post-2-365x215.jpg" alt="" width="365" height="215"/></a>
+        <div class="post-modern__main">
+          <p class="post-modern__title"><a href="single-post.html">Digital Marketing Metrics That Really Matter Nowadays</a></p>
+          <p class="post-modern__text">Marketing is currently in a state of evolution where it is dispensing</p>
+          <ul class="post-modern__meta">
+            <li><span class="icon icon-primary mdi mdi-clock"></span><a href="single-post.html">January 6, 2017</a></li>
+            <li><span class="icon icon-primary fl-justicons-visible6"></span><span>524</span></li>
+            <li> <span class="icon icon-primary mdi mdi-comment-outline"></span><a href="single-post.html">3</a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <div class="cell-sm-5 cell-lg-3">
+      <article class="post-modern"><a class="post-modern__image-wrap" href="single-post.html"><img class="post-modern__image" src="/static/images/post-2-365x215.jpg" alt="" width="365" height="215"/></a>
+        <div class="post-modern__main">
+          <p class="post-modern__title"><a href="single-post.html">Digital Marketing Metrics That Really Matter Nowadays</a></p>
+          <p class="post-modern__text">Marketing is currently in a state of evolution where it is dispensing</p>
+          <ul class="post-modern__meta">
+            <li><span class="icon icon-primary mdi mdi-clock"></span><a href="single-post.html">January 6, 2017</a></li>
+            <li><span class="icon icon-primary fl-justicons-visible6"></span><span>524</span></li>
+            <li> <span class="icon icon-primary mdi mdi-comment-outline"></span><a href="single-post.html">3</a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<ul class="pagination-custom">
+    <li class="pagination-control"><a href="#">Prev</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li class="active"><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li class="pagination-control"><a href="#">Next</a></li>
+</ul>
+    <br><br>
 {% endblock %}
