@@ -25,6 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('simditor/', include('simditor.urls')),
     path('', include('game.urls')),
+    # path('static/(?P<path>.*)', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    # path('^media/(?P<path>.*)', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 ]
 
 urlpatterns += static(

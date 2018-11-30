@@ -4,6 +4,7 @@ from datetime import datetime
 from django.db import models
 from django.urls import reverse
 from simditor.fields import RichTextField
+from django.template.defaultfilters import slugify
 
 
 # 游戏详情
@@ -11,6 +12,7 @@ class GameDetail(models.Model):
     game_id = models.AutoField(primary_key=True)
     zh_name = models.CharField(max_length=20)
     en_name = models.CharField(max_length=20)
+    slug_name = models.SlugField(editable=False, default='any_name')
     icon = models.ImageField(upload_to='icon/%Y/%m')
     star = models.IntegerField(choices=((1, '1星'), (2, '2星'), (3, '3星'), (4, '4星'), (5, '5星')), default=3)
     website = models.URLField(blank=True, null=True)
@@ -19,6 +21,8 @@ class GameDetail(models.Model):
     contract_address = models.URLField(blank=True, null=True)
     short_description = models.CharField(max_length=30)
     parti_description = RichTextField()
+    view_number = models.PositiveIntegerField(default=0)
+    like_number = models.PositiveIntegerField(default=0)
     add_time = models.DateField(auto_now_add=True)
 
     class Meta:
@@ -27,17 +31,6 @@ class GameDetail(models.Model):
 
     def __str__(self):
         return self.zh_name
-
-
-# 页面统计
-class GameView(models.Model):
-    zh_name = models.ForeignKey(GameDetail, on_delete=models.CASCADE)
-    view_number = models.PositiveIntegerField(default=0)
-    like_number = models.PositiveIntegerField(default=0)
-
-    class Meta:
-        verbose_name = 'Web Analytics'
-        verbose_name_plural = verbose_name
 
 
 # 社交平台
