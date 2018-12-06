@@ -43,7 +43,7 @@
   <div class="range range-center range-30 range-flex">
       {% for game in all_game %}
     <div class="cell-sm-5 cell-lg-3">
-      <article class="post-modern"><a class="post-modern__image-wrap" href="{% url 'detail' game.slug_name %}">
+      <article class="post-modern"><a class="post-modern__image-wrap" href="{% url 'detail' game.game_id %}">
         <img class="post-modern__image" src="{{ game.icon.url }}" alt="{{ game.zh_name }}--BeFun" width="365" height="215"/></a>
         <div class="post-modern__main">
           <p class="post-modern__title">

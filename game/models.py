@@ -5,6 +5,7 @@ from django.db import models
 from django.urls import reverse
 from simditor.fields import RichTextField
 from django.template.defaultfilters import slugify
+# from django.utils.text import slugify
 
 
 # 游戏详情
@@ -12,7 +13,7 @@ class GameDetail(models.Model):
     game_id = models.AutoField(primary_key=True)
     zh_name = models.CharField(max_length=20)
     en_name = models.CharField(max_length=20)
-    slug_name = models.SlugField(editable=False, default='any_name')
+    slug = models.SlugField(editable=False, default='cat')
     icon = models.ImageField(upload_to='icon/%Y/%m')
     star = models.IntegerField(choices=((1, '1星'), (2, '2星'), (3, '3星'), (4, '4星'), (5, '5星')), default=3)
     website = models.URLField(blank=True, null=True)
@@ -31,6 +32,10 @@ class GameDetail(models.Model):
 
     def __str__(self):
         return self.zh_name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.en_name)
+        return super(GameDetail, self).save(*args, **kwargs)
 
 
 # 社交平台

@@ -3,6 +3,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import View
 from .models import GameDetail, GameSocial
 
+
 def index(request):
     return render(request, 'index.html')
 
