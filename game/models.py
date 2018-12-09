@@ -21,7 +21,7 @@ class GameDetail(models.Model):
     platform = models.CharField(max_length=15)
     tags = models.CharField(max_length=15)
     contract_address = models.URLField(blank=True, null=True)
-    short_description = models.CharField(max_length=30)
+    short_description = models.CharField(max_length=33)
     parti_description = RichTextField()
     view_number = models.PositiveIntegerField(default=0)
     like_number = models.PositiveIntegerField(default=0)
@@ -33,6 +33,10 @@ class GameDetail(models.Model):
 
     def __str__(self):
         return self.zh_name
+
+    def viewNumber(self):
+        self.view_number +=1
+        self.save(update_fields=['view_number'])
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.en_name)
@@ -71,7 +75,7 @@ class BannerL(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='bannerL/%Y/%m')
     url = models.URLField()
-    index = models.IntegerField(default=100)
+    order = models.IntegerField(default=100)
     is_show = models.IntegerField(choices=((1, '显示'), (0, '不显示')), default=0)
     add_time = models.DateField(auto_now_add=True)
 
@@ -79,13 +83,15 @@ class BannerL(models.Model):
         verbose_name = 'Banner(L)'
         verbose_name_plural = verbose_name
 
+    def __str__(self):
+        return self.title
 
 # 首页小Banner
 class BannerS(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='bannerS/%Y/%m')
     url = models.URLField()
-    index = models.IntegerField(default=100)
+    order = models.IntegerField(default=100)
     is_show = models.IntegerField(choices=((1, '显示'), (0, '不显示')), default=0)
     add_time = models.DateField(auto_now_add=True)
 
@@ -93,13 +99,19 @@ class BannerS(models.Model):
         verbose_name = 'Banner(S)'
         verbose_name_plural = verbose_name
 
+    def __str__(self):
+        return self.title
+
 
 # 友情连接
 class Blogroll(models.Model):
     website_name = models.CharField(max_length=15)
-    website_link = models.URLField()
+    website_url = models.URLField()
     remark = models.CharField(blank=True, null=True, max_length=30)
 
     class Meta:
         verbose_name = 'Blogroll'
         verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.website_name

@@ -11,7 +11,7 @@
 {% block nav %}
     <ul class="rd-navbar-nav">
         <li><a href="{% url 'index' %}">首页</a></li>
-        <li class="active"><a href="{% url 'games' %}">游戏汇总</a></li>
+        <li class="active"><a href="{% url 'games' %}">所有游戏</a></li>
         <li><a href="{% url 'faq' %}">常见问题</a></li>
         <li><a href="{% url 'contact-us' %}">联系我们</a></li>
         <li><a href="{% url 'submit' %}">提交游戏</a></li>
@@ -20,20 +20,29 @@
 
 {% block content %}
     <!-- Search results -->
-<section class="section section-md bg-white">
-    <div class="shell">
-      <!-- RD Search-->
-      <form class="rd-search rd-search_md rd-search_classic" action="search-results.html" method="GET">
-        <div class="form-wrap">
-          <input class="form-input" id="search-results-search" type="text" name="s" autocomplete="off">
-          <label class="form-label" for="search-results-search">Search...</label>
+{#<section class="section section-md bg-white">#}
+{#    <div class="shell">#}
+{#      <!-- RD Search-->#}
+{#      <form class="rd-search rd-search_md rd-search_classic" action="search-results.html" method="GET">#}
+{#        <div class="form-wrap">#}
+{#          <input class="form-input" id="search-results-search" type="text" name="s" autocomplete="off">#}
+{#          <label class="form-label" for="search-results-search">Search...</label>#}
+{#        </div>#}
+{#        <button class="rd-search-submit" type="submit"></button>#}
+{#      </form>#}
+{#      <div class="rd-search-results"></div>#}
+{#    </div>#}
+{#</section>#}
+      <!-- Breadcrumbs-->
+      <section class="breadcrumbs-custom bg-image" style="background-image: url(/static/images/bg-image-8.jpg);">
+        <div class="shell">
+          <h2 class="breadcrumbs-custom__title">All Games</h2>
+          <ul class="breadcrumbs-custom__path">
+            <li><a href="{% url 'index' %}">首页</a></li>
+            <li class="active">所有游戏</li>
+          </ul>
         </div>
-        <button class="rd-search-submit" type="submit"></button>
-      </form>
-      <div class="rd-search-results"></div>
-    </div>
-</section>
-
+      </section>
 
     <!-- All games -->
 <section class="section section-md bg-white">
@@ -45,7 +54,7 @@
       {% for game in all_game %}
     <div class="cell-sm-5 cell-lg-3">
       <article class="post-modern"><a class="post-modern__image-wrap" href="{% url 'detail' game.game_id %}">
-        <img class="post-modern__image" src="{{ game.icon.url }}" alt="{{ game.show_name }}--BeFun" width="365" height="215"/></a>
+        <img class="post-modern__image" src="{{ game.icon.url }}" alt="{{ game.show_name }}--BeeFun Dapp游戏" width="365" height="215"/></a>
         <div class="post-modern__main">
           <p class="post-modern__title">
               <a href="{% url 'detail' game.en_name %}">{{ game.zh_name }}</a></p>

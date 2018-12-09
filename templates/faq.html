@@ -11,8 +11,8 @@
 {% block nav %}
     <ul class="rd-navbar-nav">
         <li><a href="{% url 'index' %}">首页</a></li>
-        <li><a href="{% url 'games' %}">游戏汇总</a></li>
-        <li class="active"><a href="{% url 'faq' %}">常见问题</a></li>
+        <li><a href="{% url 'games' %}">所有游戏</a></li>
+        <li class="active"><a href="{% url 'faq' %}">所有游戏</a></li>
         <li><a href="{% url 'contact-us' %}">联系我们</a></li>
         <li><a href="{% url 'submit' %}">提交游戏</a></li>
     </ul>
@@ -23,11 +23,10 @@
       <!-- Breadcrumbs-->
       <section class="breadcrumbs-custom bg-image" style="background-image: url(/static/images/bg-image-1.jpg);">
         <div class="shell">
-          <h2 class="breadcrumbs-custom__title">Tabs &amp; Accordions</h2>
+          <h2 class="breadcrumbs-custom__title">Questions & answers</h2>
           <ul class="breadcrumbs-custom__path">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Pages</a></li>
-            <li class="active">Tabs &amp; Accordions</li>
+            <li><a href="{% url 'index' %}">首页</a></li>
+            <li class="active">常见问题</li>
           </ul>
         </div>
       </section>
@@ -37,7 +36,6 @@
         <div class="shell">
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-7">
-              <h4>Accordion</h4>
               <!-- Bootstrap collapse-->
               <div class="panel-group panel-group-custom panel-group-corporate" id="accordion1" role="tablist" aria-multiselectable="false">
                 <!-- Bootstrap panel-->

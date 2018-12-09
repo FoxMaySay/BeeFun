@@ -11,9 +11,9 @@
 {% block nav %}
     <ul class="rd-navbar-nav">
         <li><a href="{% url 'index' %}">首页</a></li>
-        <li><a href="{% url 'games' %}">游戏汇总</a></li>
+        <li><a href="{% url 'games' %}">所有游戏</a></li>
         <li><a href="{% url 'faq' %}">常见问题</a></li>
-        <li class="active"><a href="{% url 'contact-us' %}">联系我们</a></li>
+        <li class="active"><a href="{% url 'contact-us' %}">所有游戏</a></li>
         <li><a href="{% url 'submit' %}">提交游戏</a></li>
     </ul>
 {% endblock %}
@@ -21,12 +21,12 @@
 {% block content %}
 
       <!-- Breadcrumbs-->
-      <section class="breadcrumbs-custom bg-image" style="background-image: url(/static/images/bg-image-6.jpg);">
+      <section class="breadcrumbs-custom bg-image" style="background-image: url(/static/images/bg-image-7.jpg);">
         <div class="shell">
           <h2 class="breadcrumbs-custom__title">Contacts</h2>
           <ul class="breadcrumbs-custom__path">
-            <li><a href="index.html">Home</a></li>
-            <li class="active">Contacts</li>
+            <li><a href="{% url 'index' %}">首页</a></li>
+            <li class="active">联系我们</li>
           </ul>
         </div>
       </section>
@@ -37,37 +37,37 @@
           <div class="layout-bordered">
             <div class="layout-bordered__main text-center">
               <div class="layout-bordered__main-inner">
-                <h3>Get in Touch</h3>
-                <p>We are available 24/7 by fax, e-mail or by phone. You can also use our quick contact form to ask a question about our services and projects.</p>
+                <h3>发送消息</h3>
+                <p>如果你对本网站有任何建议或疑问，欢迎联系并告知我们。你还可以通过填写下方表单快速提交消息。</p>
                 <!-- RD Mailform-->
                 <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
                   <div class="range range-sm-bottom range-20">
                     <div class="cell-sm-6">
                       <div class="form-wrap">
                         <input class="form-input" id="contact-first-name" type="text" name="first-name" data-constraints="@Required">
-                        <label class="form-label" for="contact-first-name">First name</label>
+                        <label class="form-label" for="contact-first-name">姓名</label>
                       </div>
                     </div>
                     <div class="cell-sm-6">
                       <div class="form-wrap">
                         <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Numeric @Required">
-                        <label class="form-label" for="contact-phone">Phone</label>
+                        <label class="form-label" for="contact-phone">电话</label>
                       </div>
                     </div>
                     <div class="cell-xs-12">
                       <div class="form-wrap">
-                        <label class="form-label" for="contact-message">Your Message</label>
+                        <label class="form-label" for="contact-message">在此填写你的消息</label>
                         <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
                       </div>
                     </div>
                     <div class="cell-sm-6">
                       <div class="form-wrap">
                         <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
-                        <label class="form-label" for="contact-email">E-mail</label>
+                        <label class="form-label" for="contact-email">邮箱</label>
                       </div>
                     </div>
                     <div class="cell-sm-6">
-                      <button class="button button-block button-primary" type="submit">Send Message</button>
+                      <button class="button button-block button-primary" type="submit">发送</button>
                     </div>
                   </div>
                 </form>
@@ -75,33 +75,30 @@
             </div>
             <div class="layout-bordered__aside">
               <div class="layout-bordered__aside-item">
-                <p class="heading-8">Get social </p>
+                <p class="heading-8">微信公众号</p>
+                <div class="unit unit-horizontal unit-spacing-xxs">
+                  <div class="unit__left"><span class="icon icon-sm icon-primary fa fa-wechat"></span></div>
+                  <div class="unit__body"><a>BeeFun <br>ID：beefun2018</a></div>
+                </div>
+              </div>
+              <div class="layout-bordered__aside-item">
+                <p class="heading-8">微博</p>
                 <ul class="list-inline-xs">
-                  <li><a class="icon icon-sm icon-default fa fa-facebook" href="#"></a></li>
-                  <li><a class="icon icon-sm icon-default fa fa-twitter" href="#"></a></li>
-                  <li><a class="icon icon-sm icon-default fa fa-google" href="#"></a></li>
-                  <li><a class="icon icon-sm icon-default fa fa-youtube" href="#"></a></li>
+                  <li><a class="icon icon-sm icon-default fa fa-weibo" href="https://weibo.com/u/6294596561" target="_blank"></a></li>
                 </ul>
               </div>
               <div class="layout-bordered__aside-item">
-                <p class="heading-8">Phone</p>
+                <p class="heading-8">联系QQ</p>
                 <div class="unit unit-horizontal unit-spacing-xxs">
-                  <div class="unit__left"><span class="icon icon-sm icon-primary material-icons-local_phone"></span></div>
-                  <div class="unit__body"><a href="callto:#">1-800-1234-567</a></div>
+                  <div class="unit__left"><span class="icon icon-sm icon-primary fa fa-qq"></span></div>
+                  <div class="unit__body"><a>2227009661</a></div>
                 </div>
               </div>
               <div class="layout-bordered__aside-item">
-                <p class="heading-8">E-mail</p>
+                <p class="heading-8">联系邮箱</p>
                 <div class="unit unit-horizontal unit-spacing-xxs">
                   <div class="unit__left"><span class="icon icon-sm icon-primary mdi mdi-email-outline"></span></div>
-                  <div class="unit__body"><a href="mailto:#">info@demolink.org</a></div>
-                </div>
-              </div>
-              <div class="layout-bordered__aside-item">
-                <p class="heading-8">Address</p>
-                <div class="unit unit-horizontal unit-spacing-xxs">
-                  <div class="unit__left"><span class="icon icon-sm icon-primary material-icons-location_on"></span></div>
-                  <div class="unit__body"><a href="#">6036 Richmond hwy., <br> Alexandria, VA, 2230</a></div>
+                  <div class="unit__body"><a href="mailto:foxmaysing@gmail.com">foxmaysing@gmail.com</a></div>
                 </div>
               </div>
             </div>
