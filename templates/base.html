@@ -61,7 +61,6 @@
                 </div>
                 <!-- RD Navbar Nav -->
                 <div class="rd-navbar-nav-wrap">
-                  <div class="rd-navbar-main-item"><a class="button button-xs button-primary" href="{% url 'submit' %}">提交游戏</a></div>
                   <!-- RD Navbar Nav-->
                     {% block nav %}
                   <ul class="rd-navbar-nav">
@@ -69,6 +68,7 @@
                     <li><a href="{% url 'games' %}">游戏汇总</a></li>
                     <li><a href="{% url 'faq' %}">常见问题</a></li>
                     <li><a href="{% url 'contact-us' %}">联系我们</a></li>
+                    <li><a href="{% url 'submit' %}">提交游戏</a></li>
                   </ul>
                     {% endblock %}
                 </div>

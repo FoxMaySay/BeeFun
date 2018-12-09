@@ -11,8 +11,9 @@ from django.template.defaultfilters import slugify
 # 游戏详情
 class GameDetail(models.Model):
     game_id = models.AutoField(primary_key=True)
-    zh_name = models.CharField(max_length=20)
-    en_name = models.CharField(max_length=20)
+    zh_name = models.CharField(max_length=20, blank=True, null=True)
+    en_name = models.CharField(max_length=20, blank=True, null=True)
+    show_name = models.CharField(max_length=20, default='poketmon')
     slug = models.SlugField(editable=False, default='cat')
     icon = models.ImageField(upload_to='icon/%Y/%m')
     star = models.IntegerField(choices=((1, '1星'), (2, '2星'), (3, '3星'), (4, '4星'), (5, '5星')), default=3)
@@ -65,17 +66,31 @@ class Feedback(models.Model):
         verbose_name_plural = verbose_name
 
 
-# 首页Banner
-class Banner(models.Model):
+# 首页大Banner
+class BannerL(models.Model):
     title = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='banner/%Y/%m')
+    image = models.ImageField(upload_to='bannerL/%Y/%m')
     url = models.URLField()
     index = models.IntegerField(default=100)
     is_show = models.IntegerField(choices=((1, '显示'), (0, '不显示')), default=0)
     add_time = models.DateField(auto_now_add=True)
 
     class Meta:
-        verbose_name = 'Banner'
+        verbose_name = 'Banner(L)'
+        verbose_name_plural = verbose_name
+
+
+# 首页小Banner
+class BannerS(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='bannerS/%Y/%m')
+    url = models.URLField()
+    index = models.IntegerField(default=100)
+    is_show = models.IntegerField(choices=((1, '显示'), (0, '不显示')), default=0)
+    add_time = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Banner(S)'
         verbose_name_plural = verbose_name
 
 

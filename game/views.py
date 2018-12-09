@@ -1,11 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import View
-from .models import GameDetail, GameSocial
+from .models import GameDetail, GameSocial, BannerL, BannerS
 
 
 def index(request):
-    return render(request, 'index.html')
+    large_banner_list = BannerL.objects.filter(is_show=1).order_by('index')[:5]
+    small_banner_list = BannerS.objects.filter(is_show=1).order_by('index')[:3]
+    context = {
+        'large_banner_list': large_banner_list,
+        'small_banner_list': small_banner_list,
+    }
+    return render(request, 'index.html', context)
 
 
 def gamesSum(request):
@@ -22,7 +28,7 @@ def gamesSum(request):
 
     context = {
         'all_game': all_game,
-        'contacts': contacts
+        'contacts': contacts,
     }
     return render(request, 'games.html', context)
 

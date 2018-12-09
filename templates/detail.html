@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-    BeeFun区块链游戏汇总 -- 最全的区块链游戏资源合集
+    BeeFun区块链游戏汇总 -- 最全的区块链游戏Dapp资源合集
 {% endblock %}
 
 {% block description %}
@@ -14,56 +14,59 @@
         <li class="active"><a href="{% url 'games' %}">游戏汇总</a></li>
         <li><a href="{% url 'faq' %}">常见问题</a></li>
         <li><a href="{% url 'contact-us' %}">联系我们</a></li>
+        <li><a href="{% url 'submit' %}">提交游戏</a></li>
     </ul>
 {% endblock %}
 
 {% block content %}
 
-      <!-- Breadcrumbs-->
-      <section class="breadcrumbs-custom bg-image" style="background-image: url(/static/images/bg-image-9.jpg);">
-        <div class="shell">
-          <h2 class="breadcrumbs-custom__title">{{ game.zh_name }}</h2>
-          <h5 class="breadcrumbs-custom__path">{{ game.en_name }}</h5>
-        </div>
-      </section>
+{#      <!-- Breadcrumbs-->#}
+{#      <section class="breadcrumbs-custom bg-image" style="background-image: url(/static/images/bg-image-9.jpg);">#}
+{#        <div class="shell">#}
+{#          <h2 class="breadcrumbs-custom__title">{{ game.zh_name }}</h2>#}
+{#          <h5 class="breadcrumbs-custom__path">{{ game.en_name }}</h5>#}
+{#        </div>#}
+{#      </section>#}
 
       <!-- Single post-->
       <section class="section section-md bg-white">
         <div class="shell blog">
           <div class="range range-90">
             <div class="cell-md-8 cell-lg-9 blog__main">
-              <article class="post-single"><img class="post-single__image" src="/static/images/post-4-870x412.jpg" alt="" width="870" height="412"/>
-                <h4 class="post-single__title">Email Newsletters Hit a Speed Bump: Inaccurate Open Rates</h4>
+              <article class="post-single"><img class="post-single__image" src="{{ game.icon.url }}" alt="区块链游戏{{ game.show_name }}" width="870" height="412"/>
+                <h4 class="post-single__title">{{ game.show_name }}</h4>
                 <ul class="post-single__meta">
                   <li>
                     <dl>
-                      <dt>Date</dt>
+                      <dt>日期</dt>
                       <dd>
-                        <time datetime="2017-01-22">January 22, 2017</time>
+                        <time datetime="2017-01-22">{{ game.add_time }}</time>
                       </dd>
                     </dl>
                   </li>
                   <li>
                     <dl>
-                      <dt>Posted by</dt>
-                      <dd>Amelia Condon</dd>
+                      <dt>区块链</dt>
+                      <dd>{{ game.platform }}</dd>
                     </dl>
                   </li>
                   <li>
                     <dl>
-                      <dt>Comments</dt>
-                      <dd>3</dd>
+                      <dt>阅读数</dt>
+                      <dd>{{ game.view_number }}</dd>
                     </dl>
                   </li>
-                  <li>
-                    <dl>
-                      <dt>Category</dt>
-                      <dd>Digital</dd>
-                    </dl>
-                  </li>
+{#                  <li>#}
+{#                    <dl>#}
+{#                      <dt>Category</dt>#}
+{#                      <dd>Digital</dd>#}
+{#                    </dl>#}
+{#                  </li>#}
                 </ul>
                 <div class="post-single__main">
-                    {{ game.parti_description | safe }}
+                    {% autoescape off %}
+                    {{ game.parti_description }}
+                    {% endautoescape %}
                 </div>
                 <div class="post-single__footer">
                   <p class="heading-5">分享给好友：</p>
@@ -75,20 +78,23 @@
               <div class="blog-aside__column">
                 <div class="blog__aside-item">
                   <!-- RD Search-->
-                  <form class="rd-search rd-search_classic" action="search-results.html" method="GET">
-                    <div class="form-wrap">
-                      <input class="form-input" id="page-aside-search" type="text" name="s" autocomplete="off">
-                      <label class="form-label" for="page-aside-search">Search the blog...</label>
-                    </div>
-                    <button class="rd-search-submit" type="submit"></button>
-                  </form>
+                    <a href="{{ game.website }}" target="_blank">
+                  <div class="button button-primary button-circle button-shadow">游戏官网</div>
+                    </a>
                 </div>
                 <div class="blog__aside-item">
-                  <p class="heading-8 blog-title">Categories</p>
+                  <p class="heading-8 blog-title"><span>游戏评分：</span><span class="tag-inline">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="51px" height="23px" viewbox="0 0 51 23.011" preserveAspectRatio="none">
+                        <polygon points="7,0.006 7,0 0,11.505 7,23.011 7,23.006 51,23.006 51,0.006 "></polygon>
+                      </svg><span>综合指数</span></span></p><a class="box-promo" href="#"><img src="/static/images/promo-1-236x321.jpg" alt="" width="236" height="321"/>
+                    <div class="box-promo__content">
+                      <h5>Recommendations to Manage Your Campaign</h5>
+                    </div></a>
+                </div>
+                <div class="blog__aside-item">
+                  <p class="heading-8 blog-title">标签：</p>
                   <ul class="list-marked-bordered">
-                    <li><a href="#"><span>Digital/SMM</span><span class="count">(4)</span></a></li>
-                    <li><a href="#"><span>Brand Marketing</span><span class="count">(2)</span></a></li>
-                    <li><a href="#"><span>Media Buying</span><span class="count">(6)</span></a></li>
+                    <li><a href="#"><span>{{ game.tags }}</span><span class="count">(4)</span></a></li>
                   </ul>
                 </div>
                 <div class="blog__aside-item">
@@ -112,52 +118,6 @@
                         <p class="post-inline__time">25 January 2017</p>
                       </div>
                     </article>
-                  </div>
-                </div>
-                <div class="blog__aside-item">
-                  <p class="heading-8 blog-title"><span>Promo</span><span class="tag-inline">
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="51px" height="23px" viewbox="0 0 51 23.011" preserveAspectRatio="none">
-                        <polygon points="7,0.006 7,0 0,11.505 7,23.011 7,23.006 51,23.006 51,0.006 "></polygon>
-                      </svg><span>New</span></span></p><a class="box-promo" href="#"><img src="/static/images/promo-1-236x321.jpg" alt="" width="236" height="321"/>
-                    <div class="box-promo__content">
-                      <h5>Recommendations to Manage Your Campaign</h5>
-                    </div></a>
-                </div>
-              </div>
-              <div class="blog-aside__column">
-                <div class="blog__aside-item">
-                  <p class="heading-8 blog-title"><span>Gallery</span></p>
-                  <div class="range range-xs range-10 max-330" data-lightgallery="group">
-                    <div class="cell-4 cell-xs-4">
-                      <!-- Thumbnail Classic-->
-                      <article class="thumbnail-classic thumbnail-classic-xs"><a class="thumbnail-classic-figure" href="/static/images/single-post-01-1200x800.jpg" data-lightgallery="item"><img src="/static/images/single-post-01-92x92.jpg" alt="" width="92" height="92"/></a>
-                      </article>
-                    </div>
-                    <div class="cell-4 cell-xs-4">
-                      <!-- Thumbnail Classic-->
-                      <article class="thumbnail-classic thumbnail-classic-xs"><a class="thumbnail-classic-figure" href="/static/images/single-post-02-1200x883.jpg" data-lightgallery="item"><img src="/static/images/single-post-02-92x92.jpg" alt="" width="92" height="92"/></a>
-                      </article>
-                    </div>
-                    <div class="cell-4 cell-xs-4">
-                      <!-- Thumbnail Classic-->
-                      <article class="thumbnail-classic thumbnail-classic-xs"><a class="thumbnail-classic-figure" href="/static/images/single-post-03-1200x803.jpg" data-lightgallery="item"><img src="/static/images/single-post-03-92x92.jpg" alt="" width="92" height="92"/></a>
-                      </article>
-                    </div>
-                    <div class="cell-4 cell-xs-4">
-                      <!-- Thumbnail Classic-->
-                      <article class="thumbnail-classic thumbnail-classic-xs"><a class="thumbnail-classic-figure" href="/static/images/single-post-04-1200x1264.jpg" data-lightgallery="item"><img src="/static/images/single-post-04-92x92.jpg" alt="" width="92" height="92"/></a>
-                      </article>
-                    </div>
-                    <div class="cell-4 cell-xs-4">
-                      <!-- Thumbnail Classic-->
-                      <article class="thumbnail-classic thumbnail-classic-xs"><a class="thumbnail-classic-figure" href="/static/images/single-post-05-1200x801.jpg" data-lightgallery="item"><img src="/static/images/single-post-05-92x92.jpg" alt="" width="92" height="92"/></a>
-                      </article>
-                    </div>
-                    <div class="cell-4 cell-xs-4">
-                      <!-- Thumbnail Classic-->
-                      <article class="thumbnail-classic thumbnail-classic-xs"><a class="thumbnail-classic-figure" href="/static/images/single-post-06-1200x800.jpg" data-lightgallery="item"><img src="/static/images/single-post-06-92x92.jpg" alt="" width="92" height="92"/></a>
-                      </article>
-                    </div>
                   </div>
                 </div>
               </div>
