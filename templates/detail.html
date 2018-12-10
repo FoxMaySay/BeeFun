@@ -33,7 +33,7 @@
         <div class="shell blog">
           <div class="range range-90">
             <div class="cell-md-8 cell-lg-9 blog__main">
-              <article class="post-single"><img class="post-single__image" src="{{ game.icon.url }}" alt="区块链游戏{{ game.show_name }}" width="870" height="412"/>
+              <article class="post-single"><img class="post-single__image" src="{{ game.icon.url }}" alt="区块链游戏{{ game.show_name }}" width="870" height="400"/>
                 <h4 class="post-single__title">{{ game.show_name }}</h4>
                 <ul class="post-single__meta">
                   <li>
@@ -56,12 +56,6 @@
                       <dd>{{ game.view_number }}</dd>
                     </dl>
                   </li>
-{#                  <li>#}
-{#                    <dl>#}
-{#                      <dt>Category</dt>#}
-{#                      <dd>Digital</dd>#}
-{#                    </dl>#}
-{#                  </li>#}
                 </ul>
                 <div class="post-single__main">
                     {% autoescape off %}
@@ -101,23 +95,16 @@
                   <p class="heading-8 blog-title">最受欢迎的游戏</p>
                   <div class="post-inline-wrap">
                     <!-- Post inline-->
+                      {% for hot in all_game %}
                     <article class="post-inline">
                       <div class="post-inline__main">
-                        <p class="post-inline__title"><a href="single-post.html">How We Measure the Vlogs' Ad Potential</a></p>
+                        <p class="post-inline__title"><a href="{{ hot.website }}" target="_blank">{{ hot.show_name }}</a></p>
                       </div>
                       <div class="post-inline__footer">
-                        <p class="post-inline__time">13 April 2017</p>
+                        <p class="post-inline__time">{{ hot.add_time }}</p>
                       </div>
                     </article>
-                    <!-- Post inline-->
-                    <article class="post-inline">
-                      <div class="post-inline__main">
-                        <p class="post-inline__title"><a href="single-post.html">Digital Marketing Metrics That Really Matter Nowadays</a></p>
-                      </div>
-                      <div class="post-inline__footer">
-                        <p class="post-inline__time">25 January 2017</p>
-                      </div>
-                    </article>
+                      {% endfor %}
                   </div>
                 </div>
               </div>

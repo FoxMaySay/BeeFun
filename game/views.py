@@ -44,7 +44,7 @@ def gamesSum(request):
 def gameDetail(request, game_id):
     game = get_object_or_404(GameDetail, game_id=game_id)
     game.viewNumber()
-    all_game = GameDetail.objects.all()
+    all_game = GameDetail.objects.all().order_by('-view_number')[:7]
     game_social = GameSocial.objects.all()
     context = {
         'game': game,

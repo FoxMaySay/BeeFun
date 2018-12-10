@@ -5,7 +5,18 @@ from django.db import models
 from django.urls import reverse
 from simditor.fields import RichTextField
 from django.template.defaultfilters import slugify
-# from django.utils.text import slugify
+
+
+class GameTag(models.Model):
+    name = models.CharField(max_length=9)
+    slug = models.SlugField()
+
+    class Meta:
+        verbose_name = 'Game Tag'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
 
 
 # 游戏详情
@@ -19,7 +30,7 @@ class GameDetail(models.Model):
     star = models.IntegerField(choices=((1, '1星'), (2, '2星'), (3, '3星'), (4, '4星'), (5, '5星')), default=3)
     website = models.URLField(blank=True, null=True)
     platform = models.CharField(max_length=15)
-    tags = models.CharField(max_length=15)
+    tags = models.ManyToManyField(GameTag)
     contract_address = models.URLField(blank=True, null=True)
     short_description = models.CharField(max_length=33)
     parti_description = RichTextField()
