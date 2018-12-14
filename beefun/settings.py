@@ -25,7 +25,7 @@ SECRET_KEY = 'gol8t-8g(+v234$fpj!12_&=ps9d2q00zw(1fub1w)*f$f@77%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['beefun.net', 'www.beefun.net', '123.207.93.222',]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

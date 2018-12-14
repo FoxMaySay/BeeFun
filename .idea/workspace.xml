@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="affe425c-8c6e-4230-8695-d0fadcb393fe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/migrations/0002_auto_20181129_2149.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/migrations/0003_gamedetail_slug_name.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/migrations/0004_auto_20181206_2046.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/migrations/0005_auto_20181207_0747.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/migrations/0006_auto_20181208_1331.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/migrations/0007_auto_20181209_1608.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/migrations/0008_auto_20181209_2118.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beefun/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/beefun/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +19,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="15" />
+            <state relative-caret-position="589">
+              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="15" />
               <folding>
                 <element signature="e#24#52#0" expanded="true" />
               </folding>
@@ -43,8 +31,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="51" column="35" lean-forward="true" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+            <state relative-caret-position="912">
+              <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -66,11 +54,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="105" column="30" lean-forward="true" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+            <state relative-caret-position="190">
+              <caret line="89" column="51" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/beefun/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -121,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/beefun/settings.py" />
         <option value="$PROJECT_DIR$/static/css/404.html" />
         <option value="$PROJECT_DIR$/templates/game.html" />
         <option value="$PROJECT_DIR$/beefun/urls.py" />
@@ -141,6 +137,7 @@
         <option value="$PROJECT_DIR$/game/admin.py" />
         <option value="$PROJECT_DIR$/game/views.py" />
         <option value="$PROJECT_DIR$/templates/detail.html" />
+        <option value="$PROJECT_DIR$/beefun/settings.py" />
       </list>
     </option>
   </component>
@@ -170,6 +167,11 @@
           <expand>
             <path>
               <item name="beefun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="beefun" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beefun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="beefun" type="462c0819:PsiDirectoryNode" />
               <item name="beefun" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -281,7 +283,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32936978" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2806183" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32699168" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16997944" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17203563" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -560,13 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beefun/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -677,9 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -697,8 +689,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="15" />
+        <state relative-caret-position="589">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="15" />
           <folding>
             <element signature="e#24#52#0" expanded="true" />
           </folding>
@@ -707,8 +699,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="51" column="35" lean-forward="true" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+        <state relative-caret-position="912">
+          <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
@@ -717,8 +709,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="105" column="30" lean-forward="true" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+        <state relative-caret-position="190">
+          <caret line="89" column="51" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beefun/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
         </state>
       </provider>
     </entry>
