@@ -1,6 +1,5 @@
 
 .idea/workspace.xml
 beefun/settings.py
-beefun/wsgi.py
 
 media/*
