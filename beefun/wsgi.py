@@ -10,10 +10,11 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 import os,sys,django
 from django.core.wsgi import get_wsgi_application
 from django.core.handlers.wsgi import  WSGIHandler
+import importlib
 
-reload(sys)
+importlib.reload(sys)
 
-sys.setdefaultencoding('utf-8')
+# sys.setdefaultencoding('utf-8')
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "beefun.settings")  #变量testproject.settings为django项目下的settings
 
